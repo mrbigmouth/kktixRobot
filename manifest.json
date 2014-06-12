@@ -1,7 +1,7 @@
 {"manifest_version" : 2
 ,"name"             : "KKtix搶票機器人"
 ,"description"      : "KKtix搶票機器人"
-,"version"          : "1.0"
+,"version"          : "1.1"
 ,"permissions"      : 
     ["https://kktix.com/"
     ,"tabs"

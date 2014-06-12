@@ -32,7 +32,7 @@ chrome.runtime.sendMessage(
       var stopFlag = false;
       //檢測是否有可購買的票
       $.each(robot.except, function(k, ticketSort) {
-        var $select = $('tbody[ng-controller="TicketCtl"]:eq(' + ticketSort + ') select[type="number"]')
+        var $select = $('tbody[ng-controller="TicketCtl"]:eq(' + ticketSort + ') select[type="number"]:visible')
           , wantBuy
           , autoBuy
           ;
