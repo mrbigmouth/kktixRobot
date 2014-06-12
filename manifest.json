@@ -1,0 +1,46 @@
+{"manifest_version" : 2
+,"name"             : "KKtix搶票機器人"
+,"description"      : "KKtix搶票機器人"
+,"version"          : "1.0"
+,"permissions"      : 
+    ["https://kktix.com/"
+    ,"tabs"
+    ]
+,"content_scripts"  :
+    [ {"matches"        :
+          ["*://*.kktix.cc/events/*"]
+      ,"js"             :
+          ["jquery.js"
+          ,"content1.js"
+          ]
+      }
+    , {"matches"        :
+          ["*://kktix.com/events/*/registrations/new"]
+      ,"js"             :
+          ["jquery.js"
+          ,"content2.js"
+          ]
+      }
+    , {"matches"        :
+          ["*://kktix.com/events/*/registrations/*"]
+      ,"js"             :
+          ["jquery.js"
+          ,"content3.js"
+          ]
+      }
+    ]
+,"background"       : 
+    {"scripts"        :
+        ["jquery.js"
+        ,"background.js"
+        ]
+    }
+,"page_action"      :
+    {"default_icon"   :
+        {"19"           : "icon.png"
+        ,"38"           : "icon2.png"
+        }
+    ,"default_title"  : "KKtix搶票機器人"
+    ,"default_popup"  : "popup.html"
+    }
+}
