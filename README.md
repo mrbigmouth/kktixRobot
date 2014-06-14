@@ -9,10 +9,10 @@
 <br /><br />
 2.從原始碼安裝：<br />
 下載全部原始碼並找個資料夾放置，<br />
-在chrome網址列上輸入<a href="chrome://extensions/">chrome://extensions</a>並瀏覽<br />
-勾選「開發人員模式」<br />
-點選載入「未封裝功能」並選取程式資料夾<br />
-取消勾選「開發人員模式」
+在chrome網址列上輸入<a href="chrome://extensions/">chrome://extensions</a>，<br />
+勾選「開發人員模式」，<br />
+點選載入「未封裝功能」並選取程式資料夾，<br />
+取消勾選「開發人員模式」。
 <br /><br />
 使用方法：<br />
 進入kktix的活動頁面後，網址列右方會出現一個KKtix的按鈕，<br />
