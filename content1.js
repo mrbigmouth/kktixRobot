@@ -25,7 +25,6 @@ chrome.runtime.sendMessage(
 
         tickets.push(data);
       });
-
       //插入/更新票種資訊
       chrome.runtime.sendMessage(
         {'type'    : 'ticketInfo'

@@ -13,7 +13,16 @@ chrome.runtime.onMessage.addListener(
 
     //若該tab尚未創建機器人資訊，則創建
     if (Robot[ tabId ] === undefined) {
-      Robot[ tabId ] = {'status' : 'unprepared'};
+      Robot[ tabId ] = 
+          {'status' : 'unprepared'
+          ,'audio'  : 'http://taira-komori.jpn.org/sound_os/arms01/explosion2.mp3'
+          ,'auto'   :
+              {'enable' : false
+              ,'buy'    : []
+              ,'text'   : '搶票中，之後修改'
+              }
+          , 'except' : []
+          };
     }
 
     //內部用快捷變數
@@ -50,10 +59,10 @@ chrome.runtime.onMessage.addListener(
     case 'stopRobot' :
       if ($Audio[ tabId ]) {
         $Audio[ tabId ][0].pause();
-        robot.status = 'prepared';
         delete $Audio[ tabId ];
-        respond(true);
       }
+      robot.status = 'prepared';
+      respond(true);
       break;
     }
   }
