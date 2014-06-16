@@ -2,10 +2,7 @@
 這是一個在<a href="http://kktix.com/">kktix</a>上搶票、等票、自動購票的Chrome外掛程式。<br />
 <br /><br />
 安裝方式：<br />
-1.使用.crx安裝：<br/>
-下載kktixRobot.crx檔案，<br />
-在chrome網址列上輸入<a href="chrome://extensions/">chrome://extensions</a>，<br />
-將kktixRobot.crx檔案拖曳至chrome頁面。
+1.前往<a href="https://chrome.google.com/webstore/detail/kktix%E6%90%B6%E7%A5%A8%E6%A9%9F%E5%99%A8%E4%BA%BA/hpnkeaimoccicgcdgddmdlgogoaoadki?hl=zh-TW" target="_blank">Chrome Store</a>安裝
 <br /><br />
 2.從原始碼安裝：<br />
 下載全部原始碼並找個資料夾放置，<br />
