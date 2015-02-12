@@ -12,7 +12,9 @@
   <form action="javascript:" id="setting">
     <h4>活動名稱：<span></span></h4>
     <p>
-      重新整理間格<input type="number" class="number" name="wait" value="5" />秒
+      <label>
+        重新整理間格<input type="number" class="number" name="wait" value="5" />秒
+      </label>
     </p>
     <p>
       有票時撥放音效：<input type="url" name="audio" class="text" style="width:200px;" value="http://taira-komori.jpn.org/sound_os/arms01/explosion2.mp3" />　<input type="checkbox" name="audioLoop" checked="checked" />重覆
@@ -24,8 +26,16 @@
     </p>
     <h4>自動購票設定：</h4>
     <div id="auto">
-      <p><input type="checkbox" name="autoEnable" />啟用自動購票</p>
-      <p>文字欄位自動填寫入：<input name="text" class="text" value="搶票中，之後修改" /></p>
+      <p>
+        <label>
+          <input type="checkbox" name="autoEnable" />啟用自動購票
+        </label>
+      </p>
+      <p>
+        <label>
+          文字欄位自動填寫入：<input name="text" class="text" value="搶票中，之後修改" />
+        </label>
+      </p>
       <div id="autoBuy"></div>
     </div>
   </form>

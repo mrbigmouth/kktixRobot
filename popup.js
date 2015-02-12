@@ -18,8 +18,8 @@ chrome.tabs.getSelected(function(tab) {
 
   //設定票種
   $.each(robot.tickets, function(key, v) {
-    $except.append('<p><span class="ticketName"><input type="checkbox" class="except" />等待票種：' + v.name + '</span></p>');
-    $autoBuy.append('<p><span class="ticketName">票種：' + v.name + '</span>購買張數：<input type="number" class="number autoBuy" value="0" step="1" min="0" /></p>');
+    $except.append('<p><label><span class="ticketName"><input type="checkbox" class="except" />等待票種：' + v.name + '</span></label></p>');
+    $autoBuy.append('<p><label><span class="ticketName">票種：' + v.name + '</span>購買張數：<input type="number" class="number autoBuy" value="0" step="1" min="0" /></label></p>');
   });
 
   //進行中的機器人自動載入之前設定
