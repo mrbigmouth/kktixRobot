@@ -3,7 +3,6 @@ chrome.tabs.getSelected(function(tab) {
     , tabId    = tab.id
     , robot    = Robot[ tabId ]
     , $except  = $('#except')
-    , $autoBuy = $('#autoBuy')
     , $form    = $('#setting')
     , form     = $form[0]
     ;
@@ -19,7 +18,6 @@ chrome.tabs.getSelected(function(tab) {
   //設定票種
   $.each(robot.tickets, function(key, v) {
     $except.append('<p><label><span class="ticketName"><input type="checkbox" class="except" />等待票種：' + v.name + '</span></label></p>');
-    $autoBuy.append('<p><label><span class="ticketName">票種：' + v.name + '</span>購買張數：<input type="number" class="number autoBuy" value="0" step="1" min="0" /></label></p>');
   });
 
   //進行中的機器人自動載入之前設定
@@ -30,17 +28,6 @@ chrome.tabs.getSelected(function(tab) {
     form.wait.value = robot.wait + '';
     form.audio.value = robot.audio;
     $(form.audioLoop).prop('checked', robot.audioLoop);
-    if (robot.auto.enable) {
-      form.autoEnable.checked = true;
-      form.text.value = robot.auto.text;
-      $.each(robot.auto.buy || {}, function(key, v) {
-        $autoBuy.find('input.autoBuy').eq( key ).val( v );
-      });
-    }
-    else {
-      form.autoEnable.checked = false;
-    }
-
   }
 
   //檢查狀態、修改功能是否可啟動
@@ -54,8 +41,7 @@ chrome.tabs.getSelected(function(tab) {
   //啟動機器人
   $form.on('submit', function() {
     //檢查各票種購買張數
-    var autoBuy   = []
-      , except    = []
+    var except    = []
       ;
 
     if ($form.find('input.except:checked').length < 1) {
@@ -72,16 +58,6 @@ chrome.tabs.getSelected(function(tab) {
     robot.except = except;
     robot.audio = form.audio.value;
     robot.audioLoop = form.audioLoop.checked;
-
-    if (form.autoEnable.checked) {
-      $form.find('input.autoBuy').each(function(i) {
-        autoBuy.push(parseInt(this.value, 10));
-      });
-      robot.auto = {'enable' : true, 'buy' : autoBuy, 'text' : form.text.value};
-    }
-    else {
-      robot.auto = {'enable' : false};
-    }
 
     robot.status = 'processing';
     chrome.tabs.reload(tabId);
